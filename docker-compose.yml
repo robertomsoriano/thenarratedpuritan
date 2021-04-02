@@ -26,7 +26,7 @@ services:
     labels:
       - "virtual.host=web.thenarratedpuritan.com" # your domain
       # - "virtual.alias=www.myapp.com" # alias for your domain (optional)
-      - "virtual.port=80" # exposed port of this container
+      - "virtual.port=3000" # exposed port of this container
       - "virtual.tls-email=thenarratedpuritan@gmail.com" # ssl is now on
       # - "virtual.auth.path=/secret/*" # path basic authnetication applys to
       # - "virtual.auth.username=admin" # Optionally add http basic authentication
