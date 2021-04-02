@@ -17,7 +17,7 @@ const Footer = () => {
                     <div className="copyright-wrap d-flex align-items-center justify-content-center">
                         <p><a
                             href={`${server}`}
-                        >Copyright @{currentYear} CBTS</a></p>
+                        >Copyright @{currentYear} TNP</a></p>
                     </div>
                 </div>
             </footer>
