@@ -1,33 +1,23 @@
-version: "3"
+version: '3'
 services:
-  caddy-gen:
-    container_name: caddy-gen
-    image: "wemakeservices/caddy-gen:latest"
-    restart: always
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro # needs socket to read events
-      - ./caddy-info:/data/caddy # needs volume to back up certificates
-    ports:
-      - "80:80"
-      - "443:443"
-    depends_on:
-      - thenarratedpuritan
-
-  thenarratedpuritan: # this is your service
+  thenarratedpuritan:
+    container_name: thenarratedpuritan
     environment:
       - EMAIL=${EMAIL}
       - EMAIL_PASS=${EMAIL_PASS}
       - TEMP_POST_PASS=${TEMP_POST_PASS}
       - SUBS_EMAIL=${SUBS_EMAIL}
+    restart: always
     build: .
     ports:
       - '3000:3000'
     restart: always
-    labels:
-      - "virtual.host=web.thenarratedpuritan.com" # your domain
-      # - "virtual.alias=www.myapp.com" # alias for your domain (optional)
-      - "virtual.port=3000" # exposed port of this container
-      - "virtual.tls-email=thenarratedpuritan@gmail.com" # ssl is now on
-      # - "virtual.auth.path=/secret/*" # path basic authnetication applys to
-      # - "virtual.auth.username=admin" # Optionally add http basic authentication
-      # - "virtual.auth.password=JDJ5JDEyJEJCdzJYM0pZaWtMUTR4UVBjTnRoUmVJeXQuOC84QTdMNi9ONnNlbDVRcHltbjV3ME1pd2pLCg==" # By specifying both username and password hash
+#     volumes: ['./:/var/www/html']
+    environment:
+      VIRTUAL_HOST: web.thenarratedpuritan.com, www.web.thenarratedpuritan.com
+      LETSENCRYPT_HOST: web.thenarratedpuritan.com, www.web.thenarratedpuritan.com
+      LETSENCRYPT_EMAIL: thenarratedpuritan@gmail.com
+networks:
+  default:
+    external:
+      name: nginx-proxy
