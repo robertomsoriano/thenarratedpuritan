@@ -14,8 +14,8 @@ services:
     restart: always
 #     volumes: ['./:/var/www/html']
     environment:
-      VIRTUAL_HOST: web.thenarratedpuritan.com
-      LETSENCRYPT_HOST: web.thenarratedpuritan.com
+      VIRTUAL_HOST: blog.thenarratedpuritan.com
+      LETSENCRYPT_HOST: blog.thenarratedpuritan.com
       LETSENCRYPT_EMAIL: thenarratedpuritan@gmail.com
 networks:
   default:
