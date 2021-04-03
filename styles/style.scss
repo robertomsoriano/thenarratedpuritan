@@ -13,7 +13,9 @@ html,body {
     font-family: $MainFont !important;
     font-size: 16px;
 }
-
+h1 {
+    font-weight: 600 !important;
+}
 // Navbar
 
 // .navbar{
@@ -21,3 +23,35 @@ html,body {
 //     }
 
 // END Navbar
+
+
+.main-btn {
+    background-color: #0577CC !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+.listen-now {
+    background-color: black !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+
+
+
+// Narrations
+.sermonaudio {
+    min-width: 80%;
+    width: 100%;
+    max-width: 100%;
+    iframe {
+        width:80%;
+    }
+}
+@media(max-width:540px) {
+    .sermonaudio {
+        iframe {
+            width: 90%;
+        }
+    }
+}
+// END Narrations
