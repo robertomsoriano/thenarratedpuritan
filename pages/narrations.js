@@ -15,7 +15,7 @@ export default function Home() {
                 <iframe tabindex="-1" width="1" height="720" src="https://embed.sermonaudio.com/browser/broadcaster/soluschristus/?sort=newest&page_size=25&background=false&rounded=true&sermon_borders=false&external_borders=false"
                     allow="autoplay" frameborder="0" scrolling="no"></iframe>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }
